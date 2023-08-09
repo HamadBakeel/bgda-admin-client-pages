@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin/InvitationCategories');
 });
+
+Route::get('/cards', function () {
+    return view('admin/InvitationCards');
+});

@@ -48970,7 +48970,9 @@ body,
   }
 }
 .app-toolbar {
-  background: var(--bs-app-toolbar-bg);
+  /* background: var(--bs-app-toolbar-bg); */
+    background: linear-gradient(45deg, #6100bf, #f54374);
+
 }
 
 @media (min-width: 992px) {
@@ -48985,8 +48987,8 @@ body,
 
 @media (min-width: 992px) {
   .app-content {
-    /* margin-top: -160px; */
-    margin-top: 1rem;
+    margin-top: -160px;
+    /* margin-top: 1rem; */
     border-radius: 30px;
   }
   .app-content .app-content-menu.menu {
@@ -48996,8 +48998,8 @@ body,
 @media (max-width: 991.98px) {
   .app-content {
     border-radius: 30px;
-    /* margin-top: -47px; */
-    margin-top: 1rem;
+    margin-top: -47px;
+    /* margin-top: 1rem; */
   }
   .app-content .app-content-menu {
     margin: 0 -20px;
