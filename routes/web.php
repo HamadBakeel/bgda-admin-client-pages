@@ -32,5 +32,5 @@ Route::get('/fonts', function () {
     return view('admin/Fonts/show');
 });
 Route::get('/fonts/add', function () {
-    return view('admin/Fonts/show');
+    return view('admin/Fonts/add');
 });
