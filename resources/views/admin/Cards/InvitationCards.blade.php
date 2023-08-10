@@ -102,8 +102,12 @@
                     <tr class="fw-bold text-muted">
                         <th class="min-w-200px"> البطاقة </th>
                         <th class="min-w-150px">رابط البطاقة</th>
+                        <!-- <th class="min-w-150px">تاريخ الاضافة</th</th>>
+                        <th class="min-w-150px">التحميلات</th>
+                        <th class="min-w-150px">التفعيل</th> -->
                         <th class="min-w-150px">رقم الخط</th>
                         <th class="min-w-100px text-end">لون الخط</th>
+                        <th class="min-w-100px text-end">العمليات</th>
                     </tr>
                 </thead>
                 <!--end::Table head-->
@@ -129,9 +133,14 @@
                                 <div class="d-flex flex-stack mb-2">
                                     <span class="me-2 fs-7 fw-bold">50%</span>
                                 </div>
-                                <!-- <div class="progress h-6px w-100">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div> -->
+
+                            </div>
+                        </td>
+                        <td class="text-end">
+                            <div class="d-flex flex-column w-100 me-2">
+                                <div class="d-flex flex-stack mb-2">
+                                <span class="badge badge-dark">#000000</span>
+                                </div>
                             </div>
                         </td>
                         <td>

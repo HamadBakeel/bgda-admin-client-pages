@@ -11,7 +11,7 @@ class InvitationCardsController extends Controller
      */
     public function index()
     {
-        return view('admin.invitation_cards');
+        return view('admin.Cards.invitation_cards');
     }
 
     /**

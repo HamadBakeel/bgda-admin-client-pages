@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/cards', function () {
-    return view('admin/InvitationCards');
+    return view('admin/Cards/InvitationCards');
+});
+Route::get('/cards/add', function () {
+    return view('admin/Cards/AddCard');
 });
