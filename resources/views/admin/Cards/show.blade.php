@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
-@section('title')جميع البطاقات@endsection
+@section('title')
+جميع البطاقات
+@endsection
 
 @section('toolbar')
 <!--begin::Toolbar-->

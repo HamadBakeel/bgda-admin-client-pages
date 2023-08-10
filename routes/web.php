@@ -20,17 +20,17 @@ Route::get('/', function () {
 
 // Cards Routes
 Route::get('/cards', function () {
-    return view('admin/Cards/InvitationCards');
+    return view('admin/Cards/show');
 });
 Route::get('/cards/add', function () {
-    return view('admin/Cards/AddCard');
+    return view('admin/Cards/add');
 });
 
 
 // Fonts Routes
 Route::get('/fonts', function () {
-    return view('admin/Fonts/InvitationFonts');
+    return view('admin/Fonts/show');
 });
 Route::get('/fonts/add', function () {
-    return view('admin/Fonts/AddFont');
+    return view('admin/Fonts/show');
 });
