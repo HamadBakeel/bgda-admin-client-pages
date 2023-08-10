@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title')جميع البطاقات@endsection
+@section('title')إضافة بطاقة@endsection
 
 @section('toolbar')
 <!--begin::Toolbar-->

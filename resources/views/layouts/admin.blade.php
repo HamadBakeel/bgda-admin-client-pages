@@ -278,10 +278,15 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="../../demo30/dist/dashboards/ecommerce.html" class="menu-link">
+																<a href="/fonts" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																		<i class="ki-outline ki-basket text-danger fs-1"></i>
-																	</span>
+																		<i class="ki-duotone ki-subtitle fs-1 text-warning">
+																			<i class="path1"></i>
+																			<i class="path2"></i>
+																			<i class="path3"></i>
+																			<i class="path4"></i>
+																			<i class="path5"></i>
+																		</i> </span>
 																	<span class="d-flex flex-column">
 																		<span class="fs-6 fw-bold text-gray-800">قائمة الخطوط</span>
 																		<span class="fs-7 fw-semibold text-muted">عرض جميع الخطوط</span>
@@ -309,14 +314,18 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="../../demo30/dist/index.html" class="menu-link">
+																<a href="fonts/add" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																		<i class="ki-outline ki-element-11 text-primary fs-1"></i>
+																		<i class="ki-duotone fs-1 text-primary ki-add-files">
+																				<i class="path1"></i>
+																				<i class="path2"></i>
+																				<i class="path3"></i>
+																			</i>
 																	</span>
-																	<span class="d-flex flex-column">
-																		<span class="fs-6 fw-bold text-gray-800">إضافة</span>
-																		<span class="fs-7 fw-semibold text-muted">إضافة تصنيف جديد</span>
-																	</span>
+																			<span class="d-flex flex-column">
+																				<span class="fs-6 fw-bold text-gray-800">إضافة</span>
+																				<span class="fs-7 fw-semibold text-muted">إضافة تصنيف جديد</span>
+																			</span>
 																</a>
 																<!--end:Menu link-->
 															</div>

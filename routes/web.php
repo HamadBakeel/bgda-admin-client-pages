@@ -17,9 +17,20 @@ Route::get('/', function () {
     return view('admin/InvitationCategories');
 });
 
+
+// Cards Routes
 Route::get('/cards', function () {
     return view('admin/Cards/InvitationCards');
 });
 Route::get('/cards/add', function () {
     return view('admin/Cards/AddCard');
+});
+
+
+// Fonts Routes
+Route::get('/fonts', function () {
+    return view('admin/Fonts/InvitationFonts');
+});
+Route::get('/fonts/add', function () {
+    return view('admin/Fonts/AddFont');
 });
