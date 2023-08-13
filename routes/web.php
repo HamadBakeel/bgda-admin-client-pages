@@ -19,11 +19,11 @@ Route::get('/', function () {
 
 
 // Cards Routes
-Route::get('/cards', function () {
-    return view('admin/Cards/show');
+Route::get('/invitations', function () {
+    return view('admin/Invitations/show');
 });
-Route::get('/cards/add', function () {
-    return view('admin/Cards/add');
+Route::get('/invitations/add', function () {
+    return view('admin/Invitations/add');
 });
 
 
@@ -33,4 +33,14 @@ Route::get('/fonts', function () {
 });
 Route::get('/fonts/add', function () {
     return view('admin/Fonts/add');
+});
+
+
+
+// Invited People Routes
+Route::get('/invited', function () {
+    return view('admin/Invited_people/show');
+});
+Route::get('/invited/add', function () {
+    return view('admin/Invited_people/add');
 });

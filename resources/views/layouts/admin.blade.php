@@ -88,7 +88,7 @@
 								<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" data-kt-menu-offset="-50,0" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 									<!--begin:Menu link-->
 									<span class="menu-link">
-										<span class="menu-title">البطاقات</span>
+										<span class="menu-title">الدعوات</span>
 										<span class="menu-arrow d-lg-none"></span>
 									</span>
 									<!--end:Menu link-->
@@ -107,7 +107,7 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="/cards" class="menu-link">
+																<a href="/invitations" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-duotone ki-element-11 text-success fs-1">
 																			<i class="path1"></i>
@@ -116,8 +116,8 @@
 																			<i class="path4"></i>
 																		</i> </span>
 																	<span class="d-flex flex-column">
-																		<span class="fs-6 fw-bold text-gray-800">قائمة البطاقات</span>
-																		<span class="fs-7 fw-semibold text-muted">عرض جميع البطاقات</span>
+																		<span class="fs-6 fw-bold text-gray-800">قائمة الدعوات</span>
+																		<span class="fs-7 fw-semibold text-muted">عرض جميع الدعوات</span>
 																	</span>
 																</a>
 																<!--end:Menu link-->
@@ -142,20 +142,18 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="cards/add" class="menu-link">
+																<a href="invitations/add" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-duotone ki-add-item 	text-primary fs-1">
 																			<i class="path1"></i>
 																			<i class="path2"></i>
 																			<i class="path3"></i>
 																		</i>
-
-																		<!-- <i class="ki-outline ki-element-11 "></i> -->
 																	</span>
 
 																	<span class="d-flex flex-column">
 																		<span class="fs-6 fw-bold text-gray-800">إضافة</span>
-																		<span class="fs-7 fw-semibold text-muted">إضافة بطاقة جديدة</span>
+																		<span class="fs-7 fw-semibold text-muted">إضافة دعوة جديدة</span>
 																	</span>
 																</a>
 																<!--end:Menu link-->
@@ -179,7 +177,7 @@
 								<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" data-kt-menu-offset="-50,0" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 									<!--begin:Menu link-->
 									<span class="menu-link">
-										<span class="menu-title">التصنيفات</span>
+										<span class="menu-title">المدعوين</span>
 										<span class="menu-arrow d-lg-none"></span>
 									</span>
 									<!--end:Menu link-->
@@ -198,13 +196,13 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="../../demo30/dist/dashboards/ecommerce.html" class="menu-link">
+																<a href="invited" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-outline ki-basket text-danger fs-1"></i>
 																	</span>
 																	<span class="d-flex flex-column">
-																		<span class="fs-6 fw-bold text-gray-800">قائمة التصنيفات</span>
-																		<span class="fs-7 fw-semibold text-muted">عرض جميع التصنيفات</span>
+																		<span class="fs-6 fw-bold text-gray-800">قائمة المدعوين</span>
+																		<span class="fs-7 fw-semibold text-muted">عرض جميع المدعوين</span>
 																	</span>
 																</a>
 																<!--end:Menu link-->
@@ -229,13 +227,13 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="../../demo30/dist/index.html" class="menu-link">
+																<a href="invited/add" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-outline ki-element-11 text-primary fs-1"></i>
 																	</span>
 																	<span class="d-flex flex-column">
 																		<span class="fs-6 fw-bold text-gray-800">إضافة</span>
-																		<span class="fs-7 fw-semibold text-muted">إضافة تصنيف جديد</span>
+																		<span class="fs-7 fw-semibold text-muted">إضافة مدعو جديد</span>
 																	</span>
 																</a>
 																<!--end:Menu link-->
