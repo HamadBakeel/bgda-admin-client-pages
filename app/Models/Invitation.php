@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Plank\Mediable\Mediable;
 
-class Font extends BaseModel
+class Invitation extends BaseModel
 {
+
     use Mediable;
-    function invitations() {
-        return $this->hasMany(Invitation::class);
+
+    function font()
+    {
+        return $this->belongsTo(Font::class);
     }
 }

@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invitationCards', function (Blueprint $table) {
+        Schema::create('fonts', function (Blueprint $table) {
             $table->id();
+            $table->text('name');
+            $table->text('file');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
+
+            $table->unique(['name','file']);
         });
     }
 
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('invitationCards');
+        Schema::dropIfExists('fonts');
     }
 };

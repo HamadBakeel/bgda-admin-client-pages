@@ -102,11 +102,12 @@
                 <!--end::Table head-->
                 <!--begin::Table body-->
                 <tbody>
+                    @forelse ($invitations as $invitation)
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
                                 <div class="symbol symbol-45px  h-100px">
-                                    <img src="assets/media/avatars/300-14.jpg" class="h-100 w-100" alt="" />
+                                    <img src="{{$invitation->firstMedia('thumbnail')->getUrl()}}" class="h-100 w-100" alt="" />
                                 </div>
                                 <div class="d-flex justify-content-start flex-column">
                                     <!-- <a href="#" class="text-dark fw-bold text-hover-primary fs-6">Ana Simmons</a>
@@ -115,12 +116,12 @@
                             </div>
                         </td>
                         <td>
-                            <a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">Intertico</a>
+                            <a href="#" class="text-dark fw-bold text-hover-primary d-block fs-6">{{$invitation->title}}</a>
                         </td>
                         <td class="text-end">
                             <div class="d-flex flex-column w-100 me-2">
                                 <div class="d-flex flex-stack mb-2">
-                                    <span class="me-2 fs-7 fw-bold">50%</span>
+                                    <span class="me-2 fs-7 fw-bold">{{$invitation->font?->name??''}}</span>
                                 </div>
 
                             </div>
@@ -128,7 +129,7 @@
                         <td class="text-end">
                             <div class="d-flex flex-column w-100 me-2">
                                 <div class="d-flex flex-stack mb-2">
-                                <span class="badge badge-dark">#000000</span>
+                                    <span class="badge badge-dark" style="background-color: {{$invitation->font_color}};">{{$invitation->font_color}}</span>
                                 </div>
                             </div>
                         </td>
@@ -140,12 +141,23 @@
                                 <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm ">
                                     <i class="ki-outline ki-pencil fs-2"></i>
                                 </a>
-                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                    <i class="ki-outline ki-trash fs-2"></i>
-                                </a>
+                                <form id="form{{$invitation->id}}" action="{{route('invitations.destroy',$invitation)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                        <i class="ki-outline ki-trash fs-2"></i>
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
+                    @empty
+                    <tr>
+                    <td colspan="5" class="text-center p-5 bg-secondary">
+                            لا يوجد بيانات
+                        </td>
+                    </tr>
+                    @endforelse
 
                 </tbody>
                 <!--end::Table body-->

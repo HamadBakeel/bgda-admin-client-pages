@@ -107,7 +107,7 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="/invitations" class="menu-link">
+																<a href="{{route('invitations.index')}}" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-duotone ki-element-11 text-success fs-1">
 																			<i class="path1"></i>
@@ -142,7 +142,7 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="invitations/add" class="menu-link">
+																<a href="{{route('invitations.create')}}" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-duotone ki-add-item 	text-primary fs-1">
 																			<i class="path1"></i>
@@ -196,7 +196,7 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="invited" class="menu-link">
+																<a href="{{route('invitations.index')}}" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-outline ki-basket text-danger fs-1"></i>
 																	</span>
@@ -227,7 +227,7 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="invited/add" class="menu-link">
+																<a href="{{route('invitations.create')}}" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-outline ki-element-11 text-primary fs-1"></i>
 																	</span>
@@ -276,7 +276,7 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="/fonts" class="menu-link">
+																<a href="{{route('fonts.index')}}" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-duotone ki-subtitle fs-1 text-warning">
 																			<i class="path1"></i>
@@ -312,7 +312,7 @@
 															<!--begin:Menu item-->
 															<div class="menu-item p-0 m-0">
 																<!--begin:Menu link-->
-																<a href="fonts/add" class="menu-link">
+																<a href="{{route('fonts.create')}}" class="menu-link">
 																	<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																		<i class="ki-duotone fs-1 text-primary ki-add-files">
 																				<i class="path1"></i>

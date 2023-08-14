@@ -49,14 +49,31 @@
 
 @section('content')
 <div class="card mb-5 mb-xl-8">
+
+@if ($message = session('success'))
+    <div class="alert alert-success" role="alert">
+        {{$message}}
+    </div>
+    @elseif ($message = session('success'))
+    <div class="alert alert-danger" role="alert">
+        {{$message}}
+    </div>
+    @endif
+    @foreach ($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+        {{$error}}
+    </div>
+    @endforeach
+
     <!--begin::Body-->
     <div class="card-body py-3">
         <!--begin::Form container-->
-        <form action="" method="post" class="d-flex flex-column gap-6">
+        <form action="{{route('invitations.store')}}" enctype="multipart/form-data" method="post" class="d-flex flex-column gap-6">
+            @csrf
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-floating mb-5 mb-md-0">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                        <input type="text" name="title" value="{{old('title')}}" class="form-control" id="floatingInput" placeholder="name@example.com" />
                         <label for="floatingInput">
                             العنوان
                         </label>
@@ -64,7 +81,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating mb-5 mb-md-0">
-                        <input type="file" class="form-control" id="customFile">
+                        <input type="file" name="image"  class="form-control" id="customFile">
                         <label for="customFile">
                             الصورة (png, jpg)
                         </label>
@@ -73,16 +90,16 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <select class="form-select form-select py-4" aria-label="Select example">
+                    <select name="font_id" value="{{old('font_id')}}" class="form-select form-select py-4" aria-label="Select example">
                         <option>الخط</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        @foreach ($fonts as $font)
+                        <option value="{{$font->id}}">{{$font->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating mb-5 mb-md-0">
-                        <input type="color" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                        <input name="font_color" value="{{old('font_color')}}" type="color" class="form-control" id="floatingInput" placeholder="name@example.com" />
                         <label for="floatingInput">
                             لون الخط
                         </label>

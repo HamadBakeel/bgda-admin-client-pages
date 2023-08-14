@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fonts', function (Blueprint $table) {
+        Schema::create('invitations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('font_id')->nullable();
+            $table->string('title');
+            $table->string('image');
+            $table->string('font_color')->default('#000');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fonts');
+        Schema::dropIfExists('invitations');
     }
 };

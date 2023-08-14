@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FontController;
+use App\Http\Controllers\InvitationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,20 +29,27 @@ Route::get('/invitations/add', function () {
 });
 
 
-// Fonts Routes
-Route::get('/fonts', function () {
-    return view('admin/Fonts/show');
-});
-Route::get('/fonts/add', function () {
-    return view('admin/Fonts/add');
-});
+// // Fonts Routes
+// Route::get('/fonts', function () {
+//     return view('admin/Fonts/show');
+// });
+// Route::get('/fonts/add', function () {
+//     return view('admin/Fonts/add');
+// });
 
 
 
-// Invited People Routes
-Route::get('/invited', function () {
-    return view('admin/Invited_people/show');
-});
-Route::get('/invited/add', function () {
-    return view('admin/Invited_people/add');
-});
+// // Invited People Routes
+// Route::get('/invited', function () {
+//     return view('admin/Invited_people/show');
+// });
+// Route::get('/invited/add', function () {
+//     return view('admin/Invited_people/add');
+// });
+
+
+
+
+// Font Resource
+Route::resource('fonts', FontController::class);//->except(['show','edit','update']);
+Route::resource('invitations', InvitationController::class);
