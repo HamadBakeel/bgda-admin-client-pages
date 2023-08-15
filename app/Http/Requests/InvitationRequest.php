@@ -22,7 +22,7 @@ class InvitationRequest extends BaseFormRequest
         return [
             'font_id' => 'bail|required|exists:fonts,id',
             'title' => 'bail|required|max:100',
-            'image' => 'required|image|mimes:jpg,png,jpeg,webp',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,webp',
             'font_color' => 'nullable|max:15'
         ];
     }

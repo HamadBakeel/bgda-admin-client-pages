@@ -135,10 +135,7 @@
                         </td>
                         <td>
                             <div class="d-flex justify-content-s flex-shrink-0 gap-2">
-                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm ">
-                                    <i class="ki-outline ki-switch fs-2"></i>
-                                </a>
-                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm ">
+                                <a href="{{route('invitations.edit',$invitation)}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm ">
                                     <i class="ki-outline ki-pencil fs-2"></i>
                                 </a>
                                 <form id="form{{$invitation->id}}" action="{{route('invitations.destroy',$invitation)}}" method="post">

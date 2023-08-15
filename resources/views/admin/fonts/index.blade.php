@@ -93,9 +93,9 @@
                         </td>
                         <td>
                             <div class="d-flex justify-content-s flex-shrink-0 gap-2">
-                                <!-- <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm ">
+                            <a href="{{route('fonts.edit',$font)}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm ">
                                     <i class="ki-outline ki-pencil fs-2"></i>
-                                </a> -->
+                                </a>
 
                                 <form id="form{{$font->id}}" action="{{route('fonts.destroy',$font)}}" method="post">
                                     @csrf

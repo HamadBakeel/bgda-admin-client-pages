@@ -62,7 +62,8 @@ class InvitationController extends Controller
      */
     public function edit(Invitation $invitation)
     {
-        return view('admin.invitations.edit', compact('invitation'));
+        $fonts = Font::where('is_active', 1)->orderByDesc('updated_at')->get();
+        return view('admin.invitations.edit', compact('invitation', 'fonts'));
     }
 
     /**
@@ -71,6 +72,10 @@ class InvitationController extends Controller
     public function update(InvitationRequest $request, Invitation $invitation)
     {
         if ($invitation->update($request->validated())) {
+            if ($request->hasFile('image')) {
+                $media = MediaUploader::fromSource($request->file('image'))->upload();
+                $invitation->syncMedia($media, 'thumbnail');
+            }
             return back()->with('success', __('selected invitation updated successfully'));
         }
 
