@@ -96,32 +96,32 @@
             <!-- Your step content goes here (like inputs or so) -->
             <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
 
-            <ul class="row">
-                <li><input type="radio" name="test" id="cb1" />
-                    <label for="cb1"><img src="assets/media/invitations/invitation1.webp" /></label>
-                </li>
-                <li><input type="radio" name="test" id="cb2" />
-                    <label for="cb2"><img src="assets/media/invitations/invitation2.webp" /></label>
-                </li>
-                <li><input type="radio" name="test" id="cb3" />
-                    <label for="cb3"><img src="assets/media/invitations/invitation3.jpg" /></label>
-                </li>
-                <li><input type="radio" name="test" id="cb4" />
-                    <label for="cb4"><img src="assets/media/invitations/invitation4.jpg" /></label>
-                </li>
-                <li><input type="radio" name="test" id="cb5" />
-                    <label for="cb5"><img src="assets/media/invitations/invitation5.jpg" /></label>
-                </li>
-                <li><input type="radio" name="test" id="cb6" />
-                    <label for="cb6"><img src="assets/media/invitations/invitation6.jpeg" /></label>
-                </li>
-                <li><input type="radio" name="test" id="cb7" />
-                    <label for="cb7"><img src="assets/media/invitations/invitation7.jpg" /></label>
-                </li>
-                <li><input type="radio" name="test" id="cb8" />
-                    <label for="cb8"><img src="assets/media/invitations/invitation8.jpg" /></label>
-                </li>
-            </ul>
+                <ul class="row">
+                    <li><input type="radio" name="test" id="cb1" />
+                        <label for="cb1"><img src="assets/media/invitations/invitation1.webp" /></label>
+                    </li>
+                    <li><input type="radio" name="test" id="cb2" />
+                        <label for="cb2"><img src="assets/media/invitations/invitation2.webp" /></label>
+                    </li>
+                    <li><input type="radio" name="test" id="cb3" />
+                        <label for="cb3"><img src="assets/media/invitations/invitation3.jpg" /></label>
+                    </li>
+                    <li><input type="radio" name="test" id="cb4" />
+                        <label for="cb4"><img src="assets/media/invitations/invitation4.jpg" /></label>
+                    </li>
+                    <li><input type="radio" name="test" id="cb5" />
+                        <label for="cb5"><img src="assets/media/invitations/invitation5.jpg" /></label>
+                    </li>
+                    <li><input type="radio" name="test" id="cb6" />
+                        <label for="cb6"><img src="assets/media/invitations/invitation6.jpeg" /></label>
+                    </li>
+                    <li><input type="radio" name="test" id="cb7" />
+                        <label for="cb7"><img src="assets/media/invitations/invitation7.jpg" /></label>
+                    </li>
+                    <li><input type="radio" name="test" id="cb8" />
+                        <label for="cb8"><img src="assets/media/invitations/invitation8.jpg" /></label>
+                    </li>
+                </ul>
             </div>
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
@@ -150,7 +150,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com" />
                             <label for="floatingInput">تاريخ الزفاف</label>
                         </div>
                     </div>
@@ -194,6 +194,20 @@
                         <div class="form-floating">
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
                             <label for="floatingInput">إسم القصر</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center gap-3 mt-5">
+                            <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم القصر</label> -->
+                            <div class="badge badge-light py-3 fs-3">تاريخ الإرسال</div>
+                            <div class="badge badge-secondary py-3 fs-3">2023/5/2</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <!-- <hr class="mt-5 mb-3" style="width: 97%; display: block; margin: auto"> -->
+                        <div class=" d-flex">
+
                         </div>
                     </div>
                 </div>
@@ -226,6 +240,7 @@
         <div class="step-title waves-effect">الإرسال للمدعوين</div>
         <div class="step-content">
             <!-- Your step content goes here (like inputs or so) -->
+            <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
 
             <!--begin::Repeater-->
             <div id="kt_docs_repeater_basic">
@@ -244,6 +259,12 @@
                                     <div class="form-floating">
                                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
                                         <label for="floatingInput">عدد المعازيم</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                                        <label for="floatingInput">رقم الجوال</label>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -268,6 +289,7 @@
                 <!--end::Form group-->
             </div>
             <!--end::Repeater-->
+        </div>
 
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
