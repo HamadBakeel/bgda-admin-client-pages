@@ -68,8 +68,35 @@
     <li class="step active">
         <div class="step-title waves-effect">معرض صور الدعوات</div>
         <div class="step-content">
-            المعرض
             <!-- Your step content goes here (like inputs or so) -->
+
+            <ul class="d-flex flex-wrap ">
+                <li><input type="radio" name="test" id="cb1" />
+                    <label for="cb1"><img src="assets/media/invitations/invitation1.webp" /></label>
+                </li>
+                <li><input type="radio" name="test" id="cb2" />
+                    <label for="cb2"><img src="assets/media/invitations/invitation2.webp" /></label>
+                </li>
+                <li><input type="radio" name="test" id="cb3" />
+                    <label for="cb3"><img src="assets/media/invitations/invitation3.jpg" /></label>
+                </li>
+                <li><input type="radio" name="test" id="cb4" />
+                    <label for="cb4"><img src="assets/media/invitations/invitation4.jpg" /></label>
+                </li>
+                <li><input type="radio" name="test" id="cb5" />
+                    <label for="cb5"><img src="assets/media/invitations/invitation5.jpg" /></label>
+                </li>
+                <li><input type="radio" name="test" id="cb6" />
+                    <label for="cb6"><img src="assets/media/invitations/invitation6.jpeg" /></label>
+                </li>
+                <li><input type="radio" name="test" id="cb7" />
+                    <label for="cb7"><img src="assets/media/invitations/invitation7.jpg" /></label>
+                </li>
+                <li><input type="radio" name="test" id="cb8" />
+                    <label for="cb8"><img src="assets/media/invitations/invitation8.jpg" /></label>
+                </li>
+            </ul>
+
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
                 <button class="waves-effect waves-dark btn next-step bg-gradient">التالي</button>
