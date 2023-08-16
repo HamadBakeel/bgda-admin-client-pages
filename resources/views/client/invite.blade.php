@@ -199,7 +199,9 @@
         <div class="step-title waves-effect">استعراض الدعوة بعد التصميم</div>
         <div class="step-content">
             <!-- Your step content goes here (like inputs or so) -->
-            إستعراض الدعوة
+
+            <img src="assets/media/invitations/invitation1.webp" style="width: 300px; display: block; height: 300px; margin: auto"/>
+
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
                 <button class="waves-effect waves-dark btn btn-flat previous-step">السابق</button>
