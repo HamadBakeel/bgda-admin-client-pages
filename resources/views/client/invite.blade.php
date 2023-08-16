@@ -11,10 +11,22 @@
     .form-floating>.form-control:not(:placeholder-shown)~label,
     .form-floating>.form-control-plaintext~label,
     .form-floating>.form-select~label {
-        transform: scale(0.95) translateY(-0.7rem) translateX(2rem);
+        transform: scale(0.95) translateY(-0.7rem) translateX(1rem);
     }
 
-    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+    input:not([type]),
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=time],
+    input[type=date],
+    input[type=datetime],
+    input[type=datetime-local],
+    input[type=tel],
+    input[type=number],
+    input[type=search],
+    textarea.materialize-textarea {
         margin-bottom: 10px;
     }
 </style>
@@ -200,7 +212,7 @@
         <div class="step-content">
             <!-- Your step content goes here (like inputs or so) -->
 
-            <img src="assets/media/invitations/invitation1.webp" style="width: 300px; display: block; height: 300px; margin: auto"/>
+            <img src="assets/media/invitations/invitation1.webp" style="width: 300px; display: block; height: 300px; margin: auto" />
 
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
@@ -213,11 +225,53 @@
         <div class="step-title waves-effect">الإرسال للمدعوين</div>
         <div class="step-content">
             <!-- Your step content goes here (like inputs or so) -->
-            فورم المدعوين
+
+            <!--begin::Repeater-->
+            <div id="kt_docs_repeater_basic">
+                <!--begin::Form group-->
+                <div class="form-group">
+                    <div data-repeater-list="kt_docs_repeater_basic">
+                        <div data-repeater-item class="border border-secondary mb-2 rounded">
+                            <div class="form-group row">
+                                <div class="col-md-5">
+                                    <div class="form-floating ms-5">
+                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                                        <label for="floatingInput">إسم المدعو</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                                        <label for="floatingInput">عدد المعازيم</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger mt-3 mt-md-8 me-8">
+                                        <i class="ki-duotone ki-trash fs-5"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
+                                        حذف
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Form group-->
+
+                <!--begin::Form group-->
+                <div class="form-group mt-5">
+                    <a href="javascript:;" data-repeater-create class="btn btn-light-primary">
+                        <i class="ki-duotone ki-plus fs-3"></i>
+                        إضافة
+                    </a>
+                </div>
+                <!--end::Form group-->
+            </div>
+            <!--end::Repeater-->
+
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
                 <button class="waves-effect waves-dark btn btn-flat previous-step">السابق</button>
-                <button class="waves-effect waves-dark btn next-step bg-gradient">التالي</button>
+                <button class="waves-effect waves-dark btn next-step bg-gradient">إرسال</button>
             </div>
         </div>
     </li>
@@ -227,6 +281,7 @@
 
 @section('script')
 <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
+<script src="assets/plugins/custom/formrepeater/formrepeater.bundle.js"></script>
 
 <script>
     var stepper = document.querySelector('.stepper');
@@ -234,5 +289,22 @@
         // options
         // firstActive: 0 // this is the default
     })
+
+
+    $('#kt_docs_repeater_basic').repeater({
+        initEmpty: false,
+
+        defaultValues: {
+            'text-input': 'foo'
+        },
+
+        show: function() {
+            $(this).slideDown();
+        },
+
+        hide: function(deleteElement) {
+            $(this).slideUp(deleteElement);
+        }
+    });
 </script>
 @endsection

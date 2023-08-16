@@ -14,7 +14,7 @@
         .border-active
     ):not(.btn-flush):not(.btn-icon) {
     border: 0;
-    padding: 0 2rem;
+    padding: 0 2rem !important;
 }
 
 .btn,
@@ -98,9 +98,9 @@ label img {
 }
 
 .form-floating > .form-control, .form-floating > .form-control-plaintext {
-  padding: 0;
+  /* padding: 0; */
 }
 .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown), .form-floating > .form-control-plaintext:focus, .form-floating > .form-control-plaintext:not(:placeholder-shown) {
-  padding-top: 0;
-  padding-bottom: 0;
+  /* padding-top: 0; */
+  padding-bottom: 1.5px;
 }
