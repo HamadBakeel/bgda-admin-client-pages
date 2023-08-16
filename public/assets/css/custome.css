@@ -10,6 +10,23 @@
 }
 
 /* Form stepper styles */
+
+.step-content ul.row {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, 30%); */
+    justify-items: center;
+}
+
+@media screen and (max-width: 991px) {
+    .step-content ul.row {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    li.step {
+        width: 100%;
+    }
+}
+
 .btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(
         .border-active
     ):not(.btn-flush):not(.btn-icon) {
@@ -60,12 +77,30 @@ label:before {
     transition-duration: 0.4s;
     transform: scale(0);
 }
-
-label img {
+ul.row li label {
     height: 150px;
-    width: 150px;
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+}
+label img {
+    max-height: 220px;
+    width: 100%;
+    object-fit: cover;
     transition-duration: 0.2s;
     transform-origin: 50% 50%;
+}
+ul.stepper .step .step-content {
+  margin-right: 0px !important;
+}
+@media screen and (max-width: 768px) {
+    label img {
+        /* height: 70px;
+        width: 70px; */
+    }
+    ul.stepper .step .step-content {
+        width: 100% !important;
+    }
 }
 
 :checked + label {
@@ -90,17 +125,20 @@ label img {
     padding: 10px !important;
 }
 
-@media screen and (min-width: 768px ) {
-  
-  .content .row .col-12:nth-child(odd) .form-floating{
-    margin-inline-end: 20px;
-  }
+@media screen and (min-width: 768px) {
+    .content .row .col-12:nth-child(odd) .form-floating {
+        margin-inline-end: 20px;
+    }
 }
 
-.form-floating > .form-control, .form-floating > .form-control-plaintext {
-  /* padding: 0; */
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext {
+    /* padding: 0; */
 }
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown), .form-floating > .form-control-plaintext:focus, .form-floating > .form-control-plaintext:not(:placeholder-shown) {
-  /* padding-top: 0; */
-  padding-bottom: 1.5px;
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-control-plaintext:focus,
+.form-floating > .form-control-plaintext:not(:placeholder-shown) {
+    /* padding-top: 0; */
+    padding-bottom: 1.5px;
 }

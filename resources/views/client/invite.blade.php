@@ -94,8 +94,9 @@
         <div class="step-title waves-effect">معرض صور الدعوات</div>
         <div class="step-content">
             <!-- Your step content goes here (like inputs or so) -->
+            <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
 
-            <ul class="d-flex flex-wrap ">
+            <ul class="row">
                 <li><input type="radio" name="test" id="cb1" />
                     <label for="cb1"><img src="assets/media/invitations/invitation1.webp" /></label>
                 </li>
@@ -121,7 +122,7 @@
                     <label for="cb8"><img src="assets/media/invitations/invitation8.jpg" /></label>
                 </li>
             </ul>
-
+            </div>
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
                 <button class="waves-effect waves-dark btn next-step bg-gradient">التالي</button>
