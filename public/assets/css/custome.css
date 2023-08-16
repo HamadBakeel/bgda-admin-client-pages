@@ -1,46 +1,49 @@
-.bg-gradient{
+.bg-gradient {
     background-image: linear-gradient(45deg, #6100bf, #f54374) !important;
 }
 
-
-
-.form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-control-plaintext ~ label, .form-floating > .form-select ~ label {
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control-plaintext ~ label,
+.form-floating > .form-select ~ label {
     transform: scale(0.85) translateY(-0.5rem) translateX(6.5rem);
 }
 
-
 /* Form stepper styles */
-.btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
+.btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(
+        .border-active
+    ):not(.btn-flush):not(.btn-icon) {
     border: 0;
     padding: 0 2rem;
 }
 
-.btn, .btn-large{
+.btn,
+.btn-large {
     background-color: #ffffff !important;
 }
 
 ul {
     list-style-type: none;
-  }
-  
-  li {
+}
+
+li {
     display: inline-block;
-  }
-  
-  input[type="radio"][id^="cb"] {
+}
+
+input[type="radio"][id^="cb"] {
     display: none;
-  }
-  
-  label {
+}
+
+label {
     border: 1px solid #fff;
     padding: 10px;
     display: block;
     position: relative;
     margin: 10px;
     cursor: pointer;
-  }
-  
-  label:before {
+}
+
+label:before {
     background-color: white;
     color: white;
     content: " ";
@@ -56,34 +59,48 @@ ul {
     line-height: 28px;
     transition-duration: 0.4s;
     transform: scale(0);
-  }
-  
-  label img {
+}
+
+label img {
     height: 150px;
     width: 150px;
     transition-duration: 0.2s;
     transform-origin: 50% 50%;
-  }
-  
-  :checked + label {
+}
+
+:checked + label {
     border-color: #ddd;
     border-radius: 5px;
-  }
-  
-  :checked + label:before {
+}
+
+:checked + label:before {
     content: "✓";
     background-color: grey;
     transform: scale(1);
-  }
-  
-  :checked + label img {
+}
+
+:checked + label img {
     transform: scale(0.9);
     box-shadow: 0 0 5px #333;
     z-index: -1;
-  }
-  [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
-      height: fit-content !important;
-      padding: 10px !important;
+}
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+    height: fit-content !important;
+    padding: 10px !important;
+}
 
-    
+@media screen and (min-width: 768px ) {
+  
+  .content .row .col-12:nth-child(odd) .form-floating{
+    margin-inline-end: 20px;
+  }
+}
+
+.form-floating > .form-control, .form-floating > .form-control-plaintext {
+  padding: 0;
+}
+.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown), .form-floating > .form-control-plaintext:focus, .form-floating > .form-control-plaintext:not(:placeholder-shown) {
+  padding-top: 0;
+  padding-bottom: 0;
 }

@@ -5,6 +5,19 @@
 <!--Import Google Icon Font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
+
+<style>
+    .form-floating>.form-control:focus~label,
+    .form-floating>.form-control:not(:placeholder-shown)~label,
+    .form-floating>.form-control-plaintext~label,
+    .form-floating>.form-select~label {
+        transform: scale(0.95) translateY(-0.7rem) translateX(2rem);
+    }
+
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        margin-bottom: 10px;
+    }
+</style>
 @endsection
 
 @section('toolbar')
@@ -107,7 +120,74 @@
         <div class="step-title waves-effect">كتابة بيانات الدعوة</div>
         <div class="step-content">
             <!-- Your step content goes here (like inputs or so) -->
-            الفورم
+
+            <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم العريس</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم العروس</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">تاريخ الزفاف</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم القصر</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم العريس</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم العروس</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">تاريخ الزفاف</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم القصر</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">تاريخ الزفاف</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <label for="floatingInput">إسم القصر</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat the same pattern for the remaining rows -->
+            </div>
+
+
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
                 <button class="waves-effect waves-dark btn btn-flat previous-step">السابق</button>
