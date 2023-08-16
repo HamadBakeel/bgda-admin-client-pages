@@ -46,6 +46,9 @@ Route::get('/invitations/add', function () {
 // Route::get('/invited/add', function () {
 //     return view('admin/Invited_people/add');
 // });
+Route::get('/invite', function () {
+    return view('client/invite');
+});
 
 
 

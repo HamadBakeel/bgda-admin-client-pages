@@ -1,3 +1,20 @@
+.bg-gradient{
+    background-image: linear-gradient(45deg, #6100bf, #f54374) !important;
+}
+
+
+
 .form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-control-plaintext ~ label, .form-floating > .form-select ~ label {
     transform: scale(0.85) translateY(-0.5rem) translateX(6.5rem);
+}
+
+
+/* Form stepper styles */
+.btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
+    border: 0;
+    padding: 0 2rem;
+}
+
+.btn, .btn-large{
+    background-color: #ffffff !important;
 }
