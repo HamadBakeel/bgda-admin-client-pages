@@ -99,7 +99,7 @@ ul.stepper .step .step-content {
         width: 70px; */
     }
     ul.stepper .step .step-content {
-        width: 100% !important;
+        width: 95% !important;
     }
 }
 

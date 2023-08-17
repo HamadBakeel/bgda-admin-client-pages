@@ -249,19 +249,19 @@
                     <div data-repeater-list="kt_docs_repeater_basic">
                         <div data-repeater-item class="border border-secondary mb-2 rounded">
                             <div class="form-group row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="form-floating ms-5">
                                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
                                         <label for="floatingInput">إسم المدعو</label>
                                     </div>
                                 </div>
-                                <div class="col-md-5">
-                                    <div class="form-floating">
+                                <div class="col-md-2">
+                                    <div class="form-floating ms-5">
                                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
                                         <label for="floatingInput">عدد المعازيم</label>
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-2">
                                     <div class="form-floating">
                                         <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com" />
                                         <label for="floatingInput">رقم الجوال</label>
