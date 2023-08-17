@@ -201,9 +201,7 @@
                             <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
                             <label for="floatingInput">إسم القصر</label> -->
                             <div class="badge badge-light py-3 fs-3">تاريخ الإرسال</div>
-                            <!-- <div class="badge badge-secondary py-3 fs-3">2023/5/2</div> -->
-                            <input type="date" class="form-control w-md-25" id="floatingInput" placeholder="2023/4/5" />
-
+                            <div class="badge badge-secondary py-3 fs-3">2023/5/2</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
