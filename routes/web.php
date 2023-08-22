@@ -49,6 +49,15 @@ Route::get('/invitations/add', function () {
 Route::get('/invite', function () {
     return view('client/invite');
 });
+Route::get('/bill', function () {
+    return view('bill');
+});
+Route::get('/calendar', function () {
+    return view('calendar');
+});
+Route::get('/reservations/create', function () {
+    return view('client.reservations.create');
+});
 
 
 

@@ -98,8 +98,8 @@ var KTAppCalendar = function () {
                 {
                     id: uid(),
                     title: 'All Day Event',
-                    start: YM + '-01',
-                    end: YM + '-02',
+                    start: YM + '-05',
+                    end: YM + '-06',
                     description: 'Toto lorem ipsum dolor sit incid idunt ut',
                     className: "fc-event-danger fc-event-solid-warning",
                     location: 'Federation Square'
