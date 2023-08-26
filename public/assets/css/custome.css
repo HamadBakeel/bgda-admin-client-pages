@@ -142,3 +142,8 @@ ul.stepper .step .step-content {
     /* padding-top: 0; */
     padding-bottom: 1.5px;
 }
+
+
+.review-table :is(td, th){
+    text-align: inherit;
+}

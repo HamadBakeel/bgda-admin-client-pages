@@ -100,11 +100,11 @@
 
                 <ul class="row">
                     <li>
-                       @foreach ($invitations as $invitation)
+                        @foreach ($invitations as $invitation)
 
-                     <input type="radio" name="test" id="cb{{ $invitation->id }}" />
-                        <label style="width: 200px;" for="cb{{ $invitation->id }}"><img  data-id="{{ $invitation->id }}" src="{{ asset('uploads/' .  $invitation->getMedia('thumbnail')->first()->getDiskPath()) }}" /></label>
-                       @endforeach
+                        <input type="radio" name="test" id="cb{{ $invitation->id }}" />
+                        <label style="width: 200px;" for="cb{{ $invitation->id }}"><img data-id="{{ $invitation->id }}" src="{{ asset('uploads/' .  $invitation->getMedia('thumbnail')->first()->getDiskPath()) }}" /></label>
+                        @endforeach
                     </li>
                     {{--
                         <li><input type="radio" name="test" id="cb2" />
@@ -143,31 +143,31 @@
             <!-- Your step content goes here (like inputs or so) -->
 
             <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
-              <input type="hidden" class="form-control" id="invitation_id" name="invitation_id"/>
+                <input type="hidden" class="form-control" id="invitation_id" name="invitation_id" />
                 <div class="row">
                     <div class="col-12 col-md-6">
-                         <div class="form-floating">
-                            <input type="text" class="form-control"name="invitation_name" id="floatingInput" placeholder="ادخل اسم الداعي" required/>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" name="invitation_name" id="floatingInput" placeholder="ادخل اسم الداعي" required />
                             <label for="floatingInput">الداعي</label>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-floating">
-                            <input type="date"name="invitation_date" class="form-control" id="floatingInput"required  />
+                            <input type="date" name="invitation_date" class="form-control" id="floatingInput" required />
                             <label for="floatingInput">تاريخ الزفاف</label>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-6">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingInput" name="invitation_place" required/>
+                            <input type="text" class="form-control" id="floatingInput" name="invitation_place" required />
                             <label for="floatingInput">إسم القصر</label>
                         </div>
                     </div>
 
-                      <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingInput" name="invitation_place_details" required/>
+                            <input type="text" class="form-control" id="floatingInput" name="invitation_place_details" required />
                             <label for="floatingInput"> مكان القصر</label>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
 
             {{-- <img src="assets/media/invitations/invitation1.webp" style="width: 300px; display: block; height: 300px; margin: auto" /> --}}
             <div id="new_invitation">
-            <h1>اختر دعوه وأملأ البيانات<h1>
+                <h1>اختر دعوه وأملأ البيانات<h1>
             </div>
 
             <div class="step-actions">
@@ -221,61 +221,107 @@
             <!-- Your step content goes here (like inputs or so) -->
             <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
 
-            <!--begin::Repeater-->
-            <div id="kt_docs_repeater_basic">
-                <!--begin::Form group-->
-                <div class="form-group">
-                    <div data-repeater-list="kt_docs_repeater_basic">
-                        <div data-repeater-item class="border border-secondary mb-2 rounded">
-                            <div class="form-group row">
-                                <div class="col-md-4">
-                                    <div class="form-floating ms-5">
-                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                                        <label for="floatingInput">إسم المدعو</label>
+                <!--begin::Repeater-->
+                <div id="kt_docs_repeater_basic">
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        <div data-repeater-list="kt_docs_repeater_basic">
+                            <div data-repeater-item class="border border-secondary mb-2 rounded">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating ms-5">
+                                            <input type="text" class="form-control nameInput" id="nameInput" />
+                                            <label for="nameInput">إسم المدعو</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating ms-5">
-                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                                        <label for="floatingInput">عدد المعازيم</label>
+                                    <div class="col-md-2">
+                                        <div class="form-floating ms-5">
+                                            <input type="number" class="form-control guestsInput" id="guestsInput" />
+                                            <label for="guestsInput">عدد المعازيم</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                                        <label for="floatingInput">رقم الجوال</label>
+                                    <div class="col-md-2">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control mobileInput" id="mobileInput" />
+                                            <label for="mobileInput">رقم الجوال</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger mt-3 mt-md-8 me-8">
-                                        <i class="ki-duotone ki-trash fs-5"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
-                                        حذف
-                                    </a>
+                                    <div class="col-md-2">
+                                        <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger mt-3 mt-md-8 me-8">
+                                            <i class="ki-duotone ki-trash fs-5"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
+                                            حذف
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--end::Form group-->
+                    <!--end::Form group-->
 
-                <!--begin::Form group-->
-                <div class="form-group mt-5">
-                    <a href="javascript:;" data-repeater-create class="btn btn-light-primary">
-                        <i class="ki-duotone ki-plus fs-3"></i>
-                        إضافة
-                    </a>
+                    <!--begin::Form group-->
+                    <div class="form-group mt-5">
+                        <a href="javascript:;" data-repeater-create class="btn btn-light-primary">
+                            <i class="ki-duotone ki-plus fs-3"></i>
+                            إضافة
+                        </a>
+                    </div>
+                    <!--end::Form group-->
                 </div>
-                <!--end::Form group-->
+                <!--end::Repeater-->
             </div>
-            <!--end::Repeater-->
-        </div>
 
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
                 <button class="waves-effect waves-dark btn btn-flat previous-step">السابق</button>
-                <button class="waves-effect waves-dark btn next-step bg-gradient">إرسال</button>
+                <button class="waves-effect waves-dark btn next-step bg-gradient" id="getData">التالي</button>
             </div>
         </div>
+    </li>
+    <li class="step ">
+        <div class="step-title waves-effect">مراجعة بيانات المدعوين</div>
+        <div class="step-content">
+            <!-- Your step content goes here (like inputs or so) -->
+            <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
+                <table class="review-table striped responsive-table">
+                    <thead>
+                        <tr>
+                            <th>إسم المدعو</th>
+                            <th>عدد المعازيم</th>
+                            <th>رقم الجوال</th>
+                            <th>حالة الدعوة</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="invitedPeopleTable">
+                        <!-- <tr>
+                            <td>صالح محمد علي ناجي</td>
+                            <td>12</td>
+                            <td>051297345</td>
+                            <td style="display: flex; align-items: center; color: orange; font-weight: bold">قيد الإنتضار <i class="small material-icons">timelapse</i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>صالح محمد علي ناجي</td>
+                            <td>4</td>
+                            <td>053247345</td>
+                            <td style="display: flex; align-items: center; color: green; font-weight: bold">تمت الدعوة <i class="small material-icons">done</i>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div>
+
+                <div class="step-actions" style="gap: 10px">
+                    <!-- Here goes your actions buttons -->
+                    <button class="waves-effect waves-dark btn btn-flat previous-step">السابق</button>
+                    <button class="waves-effect waves-dark btn next-step bg-gradient">الارسال الآن</button>
+                    <button class="waves-effect waves-dark btn next-step bg-gradient">الارسال لاحقاً</button>
+                    <button class="waves-effect waves-dark btn next-step bg-gradient">ادخال مدعوين جدد</button>
+                </div>
+            </div>
     </li>
 </ul>
 
@@ -308,55 +354,118 @@
             $(this).slideUp(deleteElement);
         }
     });
+
+
+    // Create an array to store the data
+    let formData = [];
+
+    const getDataButton = document.querySelector('#getData')
+    // get form repeater date
+    // Get the repeater container element
+
+    getDataButton.addEventListener('click', () => {
+        formData = [];
+        const repeaterContainer = document.getElementById('kt_docs_repeater_basic');
+
+        // Get all the repeater item elements
+        const repeaterItems = repeaterContainer.querySelectorAll('[data-repeater-item]');
+        // Iterate over each repeater item
+        repeaterItems.forEach((item) => {
+            // Get the input values within the repeater item
+            const name = item.querySelector('.nameInput').value;
+            const guests = item.querySelector('.guestsInput').value;
+            const mobile = item.querySelector('.mobileInput').value;
+
+            // Create an object to store the data
+            const data = {
+                name: name,
+                guests: guests,
+                mobile: mobile
+            };
+
+            // Add the data object to the formData array
+            formData.push(data);
+        });
+        // Now you can use the `formData` array which contains the data from the form repeater
+        console.log(formData);
+        const invitedPeopleTable = document.getElementById('invitedPeopleTable');
+        formData.forEach(item => {
+            const tr = document.createElement('tr');
+            const nameTd = document.createElement('td')
+            const guestsTd = document.createElement('td')
+            const mobileTd = document.createElement('td')
+            const statusTd = document.createElement('td')
+
+            nameTd.textContent = item.name
+            guestsTd.textContent = item.guests
+            mobileTd.textContent = item.mobile
+            statusTd.innerHTML = `
+            <td style="display: flex; align-items: center; color: orange; font-weight: bold">
+                قيد الإنتضار 
+                <i class="small material-icons">timelapse</i>
+            </td>`
+
+            tr.appendChild(nameTd)
+            tr.appendChild(guestsTd)
+            tr.appendChild(mobileTd)
+            tr.appendChild(statusTd)
+
+            invitedPeopleTable.appendChild(tr)
+        })
+    })
 </script>
 
 <script>
-$(document).ready(function(){
-    $("img").on("click", function(){
-        var dataId = $(this).attr("data-id");
-        $('input[name=invitation_id]').val(dataId);
+    $(document).ready(function() {
+        $("img").on("click", function() {
+            var dataId = $(this).attr("data-id");
+            $('input[name=invitation_id]').val(dataId);
 
+        });
     });
-});
 </script>
 
 
 <script type="text/javascript">
-
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
 
-    $("#btn-submit").click(function(e){
+    $("#btn-submit").click(function(e) {
 
         e.preventDefault();
-           var invitation_id = $("input[name=invitation_id]").val();
-        if( invitation_id ==""){
-         alert('choose invitation first')
+        var invitation_id = $("input[name=invitation_id]").val();
+        if (invitation_id == "") {
+            alert('choose invitation first')
         }
         var invitation_name = $("input[name=invitation_name]").val();
         var invitation_date = $("input[name=invitation_date]").val();
         var invitation_place = $("input[name=invitation_place]").val();
-        var invitation_place_details=$("input[name=invitation_place_details]").val();
+        var invitation_place_details = $("input[name=invitation_place_details]").val();
 
-         $('#new_invitation').empty();
+        $('#new_invitation').empty();
 
         $.ajax({
-           type:'POST',
-           url:"{{ route('overlay-image') }}",
-           data:{ invitation_id:invitation_id, invitation_name:invitation_name,invitation_date:invitation_date,invitation_place:invitation_place,invitation_place_details:invitation_place_details},
-           success:function(data){
+            type: 'POST',
+            url: "{{ route('overlay-image') }}",
+            data: {
+                invitation_id: invitation_id,
+                invitation_name: invitation_name,
+                invitation_date: invitation_date,
+                invitation_place: invitation_place,
+                invitation_place_details: invitation_place_details
+            },
+            success: function(data) {
                 $('#new_invitation').empty();
-             $('#new_invitation').empty();
-             $('#new_invitation').prepend('<img src="' + data.image_path + '" style="width: 300px; display: block; height: 300px; margin: auto" />')
+                $('#new_invitation').empty();
+                $('#new_invitation').prepend('<img src="' + data.image_path + '" style="width: 300px; display: block; height: 300px; margin: auto" />')
 
-           }
+            }
         });
 
     });
-
 </script>
 
 @endsection
