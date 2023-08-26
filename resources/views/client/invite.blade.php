@@ -32,9 +32,20 @@
         margin-bottom: 10px;
     }
 
-    .modal .modal-header{
+    .modal {
+        width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 80%;
+        }
+    }
+
+    .modal .modal-header {
         padding: 1.75rem 1.75rem 1.75rem 0;
     }
+
     .modal .modal-content {
         padding: 0rem 1rem 1rem !important;
     }
@@ -229,10 +240,10 @@
             <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
 
                 <!--begin::Repeater-->
-                <div id="kt_docs_repeater_basic">
+                <div id="insert_invited_people_data">
                     <!--begin::Form group-->
                     <div class="form-group">
-                        <div data-repeater-list="kt_docs_repeater_basic">
+                        <div data-repeater-list="insert_invited_people_data">
                             <div data-repeater-item class="border border-secondary mb-2 rounded">
                                 <div class="form-group row">
                                     <div class="col-md-4">
@@ -336,7 +347,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Modal title</h3>
+                <h3 class="modal-title">إضافة مدعوين آخرين</h3>
+
 
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -346,7 +358,53 @@
             </div>
 
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <!--begin::Repeater-->
+                <div id="insert_other_invited_people_data">
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        <div data-repeater-list="insert_other_invited_people_data">
+                            <div data-repeater-item class="border border-secondary mb-2 rounded">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating ms-5">
+                                            <input type="text" class="form-control nameInput" id="nameInput" />
+                                            <label for="nameInput">إسم المدعو</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-floating ms-5">
+                                            <input type="number" class="form-control guestsInput" id="guestsInput" />
+                                            <label for="guestsInput">عدد المعازيم</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control mobileInput" id="mobileInput" />
+                                            <label for="mobileInput">رقم الجوال</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger mt-3 mt-md-8 me-8">
+                                            <i class="ki-duotone ki-trash fs-5"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
+                                            حذف
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Form group-->
+
+                    <!--begin::Form group-->
+                    <div class="form-group mt-5">
+                        <a href="javascript:;" data-repeater-create class="btn btn-light-primary">
+                            <i class="ki-duotone ki-plus fs-3"></i>
+                            إضافة
+                        </a>
+                    </div>
+                    <!--end::Form group-->
+                </div>
+                <!--end::Repeater-->
             </div>
 
             <div class="modal-footer">
@@ -370,7 +428,24 @@
     })
 
 
-    $('#kt_docs_repeater_basic').repeater({
+    $('#insert_invited_people_data').repeater({
+        initEmpty: false,
+
+        defaultValues: {
+            'text-input': 'foo'
+        },
+
+        show: function() {
+            $(this).slideDown();
+        },
+
+        hide: function(deleteElement) {
+            $(this).slideUp(deleteElement);
+        }
+    });
+
+
+    $('#insert_other_invited_people_data').repeater({
         initEmpty: false,
 
         defaultValues: {
@@ -396,7 +471,7 @@
 
     getDataButton.addEventListener('click', () => {
         formData = [];
-        const repeaterContainer = document.getElementById('kt_docs_repeater_basic');
+        const repeaterContainer = document.getElementById('insert_invited_people_data');
 
         // Get all the repeater item elements
         const repeaterItems = repeaterContainer.querySelectorAll('[data-repeater-item]');
