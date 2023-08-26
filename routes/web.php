@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Invitation;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FontController;
 use App\Http\Controllers\InvitationController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientInvitationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +49,12 @@ Route::get('/invitations/add', function () {
 //     return view('admin/Invited_people/add');
 // });
 Route::get('/invite', function () {
-    return view('client/invite');
+    $invitations = Invitation::where('is_active', 1)->orderByDesc('updated_at')->get();
+
+    return view('client/invite', compact('invitations'));
 });
+
+Route::post('overlay-image', [ClientInvitationController::class, 'overlayImage'])->name('overlay-image');
 
 
 

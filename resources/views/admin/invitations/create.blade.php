@@ -112,6 +112,8 @@
                 <button type="submit" class="btn btn-success">تأكيد</button>
                 <button class="btn btn-danger">رجوع</button>
             </div>
+               <button type="submit" class="btn btn-success">تأكيد</button>
+                <button class="btn btn-danger">رجوع</button>
         </form>
         <!--end::Form container-->
     </div>

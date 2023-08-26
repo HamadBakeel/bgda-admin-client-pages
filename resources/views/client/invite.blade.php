@@ -1,10 +1,12 @@
 @extends('layouts.client')
 
 @section('styles')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 <!--Import Google Icon Font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
 
 <style>
     .form-floating>.form-control:focus~label,
@@ -97,30 +99,36 @@
             <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
 
                 <ul class="row">
-                    <li><input type="radio" name="test" id="cb1" />
-                        <label for="cb1"><img src="assets/media/invitations/invitation1.webp" /></label>
+                    <li>
+                       @foreach ($invitations as $invitation)
+
+                     <input type="radio" name="test" id="cb{{ $invitation->id }}" />
+                        <label style="width: 200px;" for="cb{{ $invitation->id }}"><img  data-id="{{ $invitation->id }}" src="{{ asset('uploads/' .  $invitation->getMedia('thumbnail')->first()->getDiskPath()) }}" /></label>
+                       @endforeach
                     </li>
-                    <li><input type="radio" name="test" id="cb2" />
-                        <label for="cb2"><img src="assets/media/invitations/invitation2.webp" /></label>
-                    </li>
-                    <li><input type="radio" name="test" id="cb3" />
-                        <label for="cb3"><img src="assets/media/invitations/invitation3.jpg" /></label>
-                    </li>
-                    <li><input type="radio" name="test" id="cb4" />
-                        <label for="cb4"><img src="assets/media/invitations/invitation4.jpg" /></label>
-                    </li>
-                    <li><input type="radio" name="test" id="cb5" />
-                        <label for="cb5"><img src="assets/media/invitations/invitation5.jpg" /></label>
-                    </li>
-                    <li><input type="radio" name="test" id="cb6" />
-                        <label for="cb6"><img src="assets/media/invitations/invitation6.jpeg" /></label>
-                    </li>
-                    <li><input type="radio" name="test" id="cb7" />
-                        <label for="cb7"><img src="assets/media/invitations/invitation7.jpg" /></label>
-                    </li>
-                    <li><input type="radio" name="test" id="cb8" />
-                        <label for="cb8"><img src="assets/media/invitations/invitation8.jpg" /></label>
-                    </li>
+                    {{--
+                        <li><input type="radio" name="test" id="cb2" />
+                            <label for="cb2"><img   data-id="invitation2.webp" src="assets/media/invitations/invitation2.webp" /></label>
+                        </li>
+                        <li><input type="radio" name="test" id="cb3" />
+                            <label for="cb3"><img  data-id="invitation3.jpg"  src="assets/media/invitations/invitation3.jpg" /></label>
+                        </li>
+                        <li><input type="radio" name="test" id="cb4" />
+                            <label for="cb4"><img  data-id="invitation4.jpg" src="assets/media/invitations/invitation4.jpg" /></label>
+                        </li>
+                        <li><input type="radio" name="test" id="cb5" />
+                            <label for="cb5"><img  data-id="invitation5.jpg" src="assets/media/invitations/invitation5.jpg" /></label>
+                        </li>
+                        <li><input type="radio" name="test" id="cb6" />
+                            <label for="cb6"><img  data-id="invitation6.jpeg" src="assets/media/invitations/invitation6.jpeg" /></label>
+                        </li>
+                        <li><input type="radio" name="test" id="cb7" />
+                            <label for="cb7"><img  data-id="invitation7.jpg" src="assets/media/invitations/invitation7.jpg" /></label>
+                        </li>
+                        <li><input type="radio" name="test" id="cb8" />
+                            <label for="cb8"><img  data-id="invitation8.jpg" src="assets/media/invitations/invitation8.jpg" /></label>
+                        </li>
+                     --}}
                 </ul>
             </div>
             <div class="step-actions">
@@ -135,67 +143,35 @@
             <!-- Your step content goes here (like inputs or so) -->
 
             <div class="content" style="max-height: 100%; overflow-y: scroll; overflow-x: hidden">
+              <input type="hidden" class="form-control" id="invitation_id" name="invitation_id"/>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">إسم العريس</label>
+                         <div class="form-floating">
+                            <input type="text" class="form-control"name="invitation_name" id="floatingInput" placeholder="ادخل اسم الداعي" required/>
+                            <label for="floatingInput">الداعي</label>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">إسم العروس</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <input type="date"name="invitation_date" class="form-control" id="floatingInput"required  />
                             <label for="floatingInput">تاريخ الزفاف</label>
                         </div>
                     </div>
+
                     <div class="col-12 col-md-6">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+                            <input type="text" class="form-control" id="floatingInput" name="invitation_place" required/>
                             <label for="floatingInput">إسم القصر</label>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+
+                      <div class="col-12 col-md-6">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">إسم العريس</label>
+                            <input type="text" class="form-control" id="floatingInput" name="invitation_place_details" required/>
+                            <label for="floatingInput"> مكان القصر</label>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">إسم العروس</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">تاريخ الزفاف</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">إسم القصر</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">تاريخ الزفاف</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                            <label for="floatingInput">إسم القصر</label>
-                        </div>
-                    </div>
+
                     <div class="col-12">
                         <div class="d-flex justify-content-center gap-3 mt-5">
                             <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
@@ -218,7 +194,7 @@
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
                 <button class="waves-effect waves-dark btn btn-flat previous-step">السابق</button>
-                <button class="waves-effect waves-dark btn next-step bg-gradient">التالي</button>
+                <button class="waves-effect waves-dark btn next-step bg-gradient" id="btn-submit">التالي</button>
             </div>
         </div>
     </li>
@@ -227,7 +203,10 @@
         <div class="step-content">
             <!-- Your step content goes here (like inputs or so) -->
 
-            <img src="assets/media/invitations/invitation1.webp" style="width: 300px; display: block; height: 300px; margin: auto" />
+            {{-- <img src="assets/media/invitations/invitation1.webp" style="width: 300px; display: block; height: 300px; margin: auto" /> --}}
+            <div id="new_invitation">
+            <h1>اختر دعوه وأملأ البيانات<h1>
+            </div>
 
             <div class="step-actions">
                 <!-- Here goes your actions buttons -->
@@ -330,4 +309,54 @@
         }
     });
 </script>
+
+<script>
+$(document).ready(function(){
+    $("img").on("click", function(){
+        var dataId = $(this).attr("data-id");
+        $('input[name=invitation_id]').val(dataId);
+
+    });
+});
+</script>
+
+
+<script type="text/javascript">
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $("#btn-submit").click(function(e){
+
+        e.preventDefault();
+           var invitation_id = $("input[name=invitation_id]").val();
+        if( invitation_id ==""){
+         alert('choose invitation first')
+        }
+        var invitation_name = $("input[name=invitation_name]").val();
+        var invitation_date = $("input[name=invitation_date]").val();
+        var invitation_place = $("input[name=invitation_place]").val();
+        var invitation_place_details=$("input[name=invitation_place_details]").val();
+
+         $('#new_invitation').empty();
+
+        $.ajax({
+           type:'POST',
+           url:"{{ route('overlay-image') }}",
+           data:{ invitation_id:invitation_id, invitation_name:invitation_name,invitation_date:invitation_date,invitation_place:invitation_place,invitation_place_details:invitation_place_details},
+           success:function(data){
+                $('#new_invitation').empty();
+             $('#new_invitation').empty();
+             $('#new_invitation').prepend('<img src="' + data.image_path + '" style="width: 300px; display: block; height: 300px; margin: auto" />')
+
+           }
+        });
+
+    });
+
+</script>
+
 @endsection

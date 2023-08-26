@@ -41,7 +41,7 @@ class InvitationController extends Controller
     {
         $invitation = Invitation::create($request->validated());
         if ($invitation) {
-            $media = MediaUploader::fromSource($request->file('image'))->upload();
+            $media = MediaUploader::fromSource($request->file('image'))->toDirectory('invitations')->upload();
             $invitation->syncMedia($media, 'thumbnail');
             return back()->with('success', __('new invitation added successfully'));
         }
@@ -75,6 +75,7 @@ class InvitationController extends Controller
             if ($request->hasFile('image')) {
                 $media = MediaUploader::fromSource($request->file('image'))->upload();
                 $invitation->syncMedia($media, 'thumbnail');
+
             }
             return back()->with('success', __('selected invitation updated successfully'));
         }

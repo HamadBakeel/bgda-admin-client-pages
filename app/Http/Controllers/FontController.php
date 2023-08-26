@@ -39,7 +39,7 @@ class FontController extends Controller
     {
         $font = Font::create($request->validated());
         if ($font) {
-            $media = MediaUploader::fromSource($request->file('file'))->upload();
+            $media = MediaUploader::fromSource($request->file('file'))->toDirectory('fonts')->upload();
             $font->syncMedia($media, 'thumbnail');
             return back()->with('success', __('new font added successfully'));
         }
