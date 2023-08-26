@@ -31,6 +31,20 @@
     textarea.materialize-textarea {
         margin-bottom: 10px;
     }
+
+    .modal .modal-header{
+        padding: 1.75rem 1.75rem 1.75rem 0;
+    }
+    .modal .modal-content {
+        padding: 0rem 1rem 1rem !important;
+    }
+
+    .modal .modal-footer {
+        justify-content: start;
+        gap: 10px;
+        background-color: transparent;
+        padding: 10px 7px;
+    }
 </style>
 @endsection
 
@@ -68,14 +82,7 @@
             <div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-4 gap-lg-10 pt-6 pb-18 py-lg-13">
                 <div class="d-flex gap-4 gap-lg-13 justify-content-between w-100">
                     <!--begin::Item-->
-                    <div class="d-flex flex-column">
-                        <!--begin::Input group-->
-                        <!-- <div class="input-group mb-5" dir="ltr">
-                            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                            <button class="input-group-text btn btn-success" id="basic-addon2">البحث</button>
-                        </div> -->
-                        <!--end::Input group-->
-                    </div>
+                    <div class="d-flex flex-column"></div>
                     <!--end::Item-->
                 </div>
                 <!--end::Items-->
@@ -319,12 +326,36 @@
                     <button class="waves-effect waves-dark btn btn-flat previous-step">السابق</button>
                     <button class="waves-effect waves-dark btn next-step bg-gradient">الارسال الآن</button>
                     <button class="waves-effect waves-dark btn next-step bg-gradient">الارسال لاحقاً</button>
-                    <button class="waves-effect waves-dark btn next-step bg-gradient">ادخال مدعوين جدد</button>
+                    <button type="button" class="btn bg-gradient" data-bs-toggle="modal" data-bs-target="#addNewPeole">ادخال مدعوين جدد</button>
                 </div>
             </div>
     </li>
 </ul>
+<!-- Modal Structure -->
+<div class="modal fade" style="background-color: transparent; box-shadow: none;" tabindex="-1" id="addNewPeole">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Modal title</h3>
 
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                </div>
+                <!--end::Close-->
+            </div>
+
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">إغلاق</button>
+                <button type="button" class="btn bg-gradient">إضافة</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
@@ -387,7 +418,6 @@
             formData.push(data);
         });
         // Now you can use the `formData` array which contains the data from the form repeater
-        console.log(formData);
         const invitedPeopleTable = document.getElementById('invitedPeopleTable');
         formData.forEach(item => {
             const tr = document.createElement('tr');
